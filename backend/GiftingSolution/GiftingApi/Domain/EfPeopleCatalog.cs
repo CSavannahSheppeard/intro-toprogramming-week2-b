@@ -25,8 +25,8 @@ public class EfPeopleCatalog : ICatalogPeople
         };
 
         // DataContext is an implementation of two patterns:
-            // One is a "Repository Pattern"
-            // A Unit of Work Pattern
+        // One is a "Repository Pattern"
+        // A Unit of Work Pattern
 
         _context.People.Add(personToAdd);
 
@@ -37,12 +37,12 @@ public class EfPeopleCatalog : ICatalogPeople
 
     }
 
-    public async Task<PersonResponse> GetPeopleAsync()
+    public async Task<PersonResponse> GetPeopleAsync(CancellationToken token)
     {
         // Select Id, FirstName, LastName from People where Unfriended = 0
         var data = await GetPeopleThatAreStillFriends().
-            Select(p => new PersonItemResponse(p.Id.ToString(), p.FirstName, p.LastName)).ToListAsync();
-        
+            Select(p => new PersonItemResponse(p.Id.ToString(), p.FirstName, p.LastName)).ToListAsync(token);
+
         return new PersonResponse(data!);
     }
 
@@ -51,7 +51,7 @@ public class EfPeopleCatalog : ICatalogPeople
         return await GetPeopleThatAreStillFriends()
             .Where(p => p.Id == id)
             .Select(p => new PersonItemResponse(p.Id.ToString(), p.FirstName, p.LastName))
-            .SingleOrDefaultAsync(); 
+            .SingleOrDefaultAsync();
     }
 
     private IQueryable<PersonEntity> GetPeopleThatAreStillFriends()

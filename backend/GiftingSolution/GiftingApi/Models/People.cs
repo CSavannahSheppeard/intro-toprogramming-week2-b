@@ -18,11 +18,10 @@ public record PersonCreateRequest : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
-        if(FirstName.Trim().ToUpperInvariant() == "DARTH" && LastName.Trim().ToUpperInvariant() == "VADER")
+        if (FirstName.Trim().ToUpperInvariant() == "DARTH" && LastName.Trim().ToUpperInvariant() == "VADER")
         {
             yield return new ValidationResult("We have a strict no Sith policy", new string[] { nameof(FirstName), nameof(LastName) });
         }
 
     }
 }
-
