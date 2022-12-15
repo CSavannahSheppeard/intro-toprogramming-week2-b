@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GiftGivingComponent } from './gift-giving.component';
+import { PrefsComponent } from './prefs.component';
 
-describe('GiftGivingComponent', () => {
-  let component: GiftGivingComponent;
-  let fixture: ComponentFixture<GiftGivingComponent>;
+describe('PrefsComponent', () => {
+  let component: PrefsComponent;
+  let fixture: ComponentFixture<PrefsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GiftGivingComponent]
+      declarations: [PrefsComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(GiftGivingComponent);
+    fixture = TestBed.createComponent(PrefsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

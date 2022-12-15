@@ -9,9 +9,13 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { GiftGivingComponent } from './features/gift-giving/gift-giving.component';
 import { AboutUsComponent } from './features/about-us/about-us.component';
 import { PeopleListComponent } from './features/gift-giving/components/people-list/people-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PersonDataService } from './services/people-data.service';
 import { PeopleEntryComponent } from './features/gift-giving/components/people-entry/people-entry.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +23,16 @@ import { PeopleEntryComponent } from './features/gift-giving/components/people-e
     NavigationComponent,
     DashboardComponent,
     GiftGivingComponent,
-    AboutUsComponent, 
+    AboutUsComponent,
     PeopleListComponent, PeopleEntryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [PersonDataService],
   bootstrap: [AppComponent]

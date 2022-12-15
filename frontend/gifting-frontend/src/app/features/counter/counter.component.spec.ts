@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GiftGivingComponent } from './gift-giving.component';
+import { CounterComponent } from './counter.component';
 
-describe('GiftGivingComponent', () => {
-  let component: GiftGivingComponent;
-  let fixture: ComponentFixture<GiftGivingComponent>;
+describe('CounterComponent', () => {
+  let component: CounterComponent;
+  let fixture: ComponentFixture<CounterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GiftGivingComponent]
+      declarations: [CounterComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(GiftGivingComponent);
+    fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

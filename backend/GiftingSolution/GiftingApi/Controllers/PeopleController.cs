@@ -33,7 +33,7 @@ public class PeopleController : ControllerBase
     public async Task<ActionResult<PersonItemResponse>> AddPerson([FromBody] PersonCreateRequest request)
     {
         // Validate the request.
-     
+
         // if it's valid - do the work (add it to our database) 
         // it it is NOT valid, you send a 400 (Bad Request)
         // return a 201 Created
@@ -50,6 +50,6 @@ public class PeopleController : ControllerBase
     public async Task<ActionResult<PersonResponse>> GetAllPeople()
     {
         PersonResponse response = await _personCatalog.GetPeopleAsync();
-        return Ok(response); 
+        return Ok(response);
     }
 }
