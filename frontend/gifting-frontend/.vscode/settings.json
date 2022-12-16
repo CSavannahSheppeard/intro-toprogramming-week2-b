@@ -40,6 +40,5 @@
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "explorer.confirmDelete": false,
-
     "peacock.color": "#dd0531"
 }
